@@ -26,3 +26,8 @@ ul {
   border: 1px solid rgb(35, 63, 35);
   background-color:  rgb(172, 240, 172);
 }
+
+.selected.wrong {
+  border: 1px solid rgb(248, 6, 6);
+  background-color:  rgb(243, 185, 185);
+}

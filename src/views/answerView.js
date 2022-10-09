@@ -16,6 +16,8 @@ export const createAnswerElement = (key, answerText , currentQuestion) => {
     element.classList.add('selected')
     if(key === currentQuestion.correct) {
       element.classList.add('right')
+    } else {
+      element.classList.add('wrong')
     }
   })
   return element;
