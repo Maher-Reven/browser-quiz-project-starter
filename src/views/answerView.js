@@ -4,7 +4,7 @@
  * Create an Answer element
  * @returns {Element}
  */
-export const createAnswerElement = (key, answerText) => {
+export const createAnswerElement = (key, answerText , currentQuestion) => {
   const element = document.createElement('li');
   element.innerHTML = String.raw`
     ${key}: ${answerText};
@@ -13,7 +13,10 @@ export const createAnswerElement = (key, answerText) => {
   element.addEventListener('click' , ()=> {
     const parent = element.parentNode
     Array.from(parent.children).forEach(child => child.classList.remove('selected'))
-    element.classList.add('selected') 
+    element.classList.add('selected')
+    if(key === currentQuestion.correct) {
+      element.classList.add('right')
+    }
   })
   return element;
 };
