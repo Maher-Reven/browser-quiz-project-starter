@@ -14,13 +14,12 @@ export const createQuestionElement = (question) => {
   element.innerHTML = String.raw`
     <h1>${question}</h1>
 
-    <ul id="${ANSWERS_LIST_ID}">
+    <ul id="${ANSWERS_LIST_ID}" class='list_of_answers'>
     </ul>
 
     <button id="${NEXT_QUESTION_BUTTON_ID}">
       Next question
     </button>
   `;
-
   return element;
 };

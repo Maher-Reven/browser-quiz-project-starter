@@ -15,3 +15,9 @@
 ul {
   list-style: none;
 }
+
+.selected {
+  padding: 10px;
+  border: 1px solid #333;
+  background-color: #eee;
+}
