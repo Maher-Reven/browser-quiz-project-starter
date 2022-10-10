@@ -16,13 +16,17 @@ ul {
   list-style: none;
 }
 
-.selected {
+/* highlight right & wrong answers */
+.answer-item {
   padding: 10px;
+}
+
+.selected {
   border: 1px solid #333;
   background-color: #eee;
 }
 
-.selected.right {
+.selected.right , .give-up {
   border: 1px solid rgb(35, 63, 35);
   background-color:  rgb(172, 240, 172);
 }
@@ -30,4 +34,9 @@ ul {
 .selected.wrong {
   border: 1px solid rgb(248, 6, 6);
   background-color:  rgb(243, 185, 185);
+}
+
+/* show score  */
+.user-score {
+  display: none;
 }

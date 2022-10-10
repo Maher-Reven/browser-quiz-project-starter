@@ -13,6 +13,7 @@ export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
+  document.getElementById('userScore').style.display= 'block'
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
   const questionElement = createQuestionElement(currentQuestion.text);
@@ -29,6 +30,7 @@ export const initQuestionPage = () => {
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
+
 };
 
 const nextQuestion = () => {
@@ -36,5 +38,4 @@ const nextQuestion = () => {
 
   initQuestionPage();
 };
-
 
