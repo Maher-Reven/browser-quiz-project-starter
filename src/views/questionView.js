@@ -17,11 +17,6 @@ export const createQuestionElement = (question) => {
     <ul id="${ANSWERS_LIST_ID}" class='list_of_answers'>
     </ul>
 
-
-    <button id="${GIVE_UP_BUTTON_ID}">
-      Give up
-    </button>
-
     <button id="${NEXT_QUESTION_BUTTON_ID}">
       Next question
     </button>

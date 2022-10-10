@@ -16,7 +16,6 @@ export const createAnswerElement = (key, answerText , currentQuestion) => {
   element.addEventListener('click' , myFun)
   function myFun() {
     const parent = element.parentNode
-    // Array.from(parent.children).forEach(child => child.classList.remove('selected'))
     Array.from(parent.children).forEach(child => (child.classList = 'answer-item'))
     element.classList.add('selected')
     currentQuestion.selected = key
