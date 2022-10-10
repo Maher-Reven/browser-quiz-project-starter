@@ -11,15 +11,19 @@ export const createAnswerElement = (key, answerText , currentQuestion) => {
   element.innerHTML = String.raw`
     ${key}: ${answerText};
   `;
+
   element.classList.add('answer-item')
   element.id = key
+
   element.addEventListener('click' , myFun)
+
   function myFun() {
     const parent = element.parentNode
-    // Array.from(parent.children).forEach(child => child.classList.remove('selected'))
     Array.from(parent.children).forEach(child => (child.classList = 'answer-item'))
+    
     element.classList.add('selected')
     currentQuestion.selected = key
+    
     currentQuestion.correct === currentQuestion.selected && (score += 1)
     document.getElementById('userScore').innerText = `Score: ${score}`
 
@@ -29,6 +33,7 @@ export const createAnswerElement = (key, answerText , currentQuestion) => {
       element.classList.add('wrong')
     }
   }
+
   return element;
 };
 
