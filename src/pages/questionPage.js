@@ -4,6 +4,7 @@ import {
   ANSWERS_LIST_ID,
   NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
+  GIVE_UP_BUTTON_ID 
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
@@ -31,6 +32,10 @@ export const initQuestionPage = () => {
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
 
+  document
+  .getElementById(GIVE_UP_BUTTON_ID)
+  .addEventListener('click', giveUp);
+
 };
 
 const nextQuestion = () => {
@@ -39,3 +44,8 @@ const nextQuestion = () => {
   initQuestionPage();
 };
 
+const giveUp = () => {
+  Array.from(document.getElementsByClassName('answer-item')).forEach(answer => (answer.classList = 'answer-item'))
+  const correct = document.getElementById(quizData.questions[quizData.currentQuestionIndex].correct);
+  correct.classList.add('give-up')
+}
