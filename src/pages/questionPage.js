@@ -45,7 +45,11 @@ const nextQuestion = () => {
 };
 
 const giveUp = () => {
-  Array.from(document.getElementsByClassName('answer-item')).forEach(answer => (answer.classList = 'answer-item'))
   const correct = document.getElementById(quizData.questions[quizData.currentQuestionIndex].correct);
+  Array.from(document.getElementsByClassName('answer-item')).forEach(answer => {
+    answer.classList = 'answer-item'
+    answer.style.pointerEvents = "none";
+  })
   correct.classList.add('give-up')
+  correct.style.pointerEvents = "none";
 }
