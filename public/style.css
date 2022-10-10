@@ -1,3 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+:root {
+  --primary-color: #f1f3f5;
+  --secondary-color: #2a4bb7;
+  --darkerSecondary-color: #203d9d;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  font-family: 'Lato', sans-serif, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: var(--primary-color);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+.mt-1 {
+  margin-top: 5px;
+}
+
+.mt-2 {
+  margin-top: 10px;
+}
+
+.mt-3 {
+  margin-top: 15px;
+}
+
+.mt-4 {
+  margin-top: 20px;
+}
+
+.btn {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
 .centered {
   position: fixed;
   top: 50%;
@@ -15,3 +78,41 @@
 ul {
   list-style: none;
 }
+
+/*Welcome Page*/
+
+.welcome-page {
+  display: flex;
+  max-width: 700px;
+  height: auto;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-page-item {
+  padding: 20px;
+  flex-basis: 50%;
+}
+
+.welcome-page-item h1 {
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.welcome-page-item button {
+  color: white;
+  background-color: var(--secondary-color);
+  font-size: 1.2rem;
+  padding: 20px;
+}
+
+.welcome-page-item button:hover {
+  background-color: var(--darkerSecondary-color);
+}
+
+.welcome-page-img {
+  width: 100%;
+}
+
+/*Welcome Page end*/
