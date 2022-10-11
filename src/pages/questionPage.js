@@ -54,6 +54,6 @@ const giveUp = () => {
     answer.classList = 'answer-item'
     answer.style.pointerEvents = "none";
   })
-  correct.classList.add('give-up')
+  correct.classList.add('right')
   correct.style.pointerEvents = "none";
 }

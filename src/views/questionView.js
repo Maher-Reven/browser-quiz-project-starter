@@ -17,7 +17,6 @@ export const createQuestionElement = (question) => {
     <ul id="${ANSWERS_LIST_ID}" class='list_of_answers'>
     </ul>
 
-
     <button id="${GIVE_UP_BUTTON_ID}">
       Give up
     </button>
