@@ -15,3 +15,17 @@
 ul {
   list-style: none;
 }
+
+/*progression_bar--start*/
+#progression_bar {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#progression_bar div {
+  width: 0%;
+  height: 30px;
+  background-color: #04aa6d;
+}
+
+/*progression_bar--end*/
