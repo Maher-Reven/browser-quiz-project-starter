@@ -9,12 +9,19 @@ import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
  */
 export const createQuestionElement = (question) => {
   const element = document.createElement('div');
-
+element.setAttribute('class','container');
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
-    <h1>${question}</h1>
+    <h1 class='question'>${question}</h1>
 
+<<<<<<< HEAD
     <ul id="${ANSWERS_LIST_ID}" class='list_of_answers'>
+||||||| 242ccec
+    <ul id="${ANSWERS_LIST_ID}">
+=======
+    <ul id="${ANSWERS_LIST_ID}">
+    
+>>>>>>> 6d703beeedb2b90b57e52baf254edfa85e82a01c
     </ul>
 
     <button id="${NEXT_QUESTION_BUTTON_ID}">
