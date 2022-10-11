@@ -22,7 +22,7 @@ ul {
   background-color: #eee;
 }
 
-.selected.right {
+.right {
   border: 1px solid rgb(35, 63, 35);
   background-color:  rgb(172, 240, 172);
 }
