@@ -40,6 +40,3 @@ export const createAnswerElement = (key, answerText , currentQuestion) => {
 
   return element;
 };
-
-
-  
