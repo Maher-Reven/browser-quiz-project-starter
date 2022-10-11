@@ -39,8 +39,13 @@ export const initQuestionPage = () => {
 
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-  quizData.currentQuestionIndex === questionsLength  && (quizData.currentQuestionIndex = 0)
+  // quizData.currentQuestionIndex === questionsLength  && (quizData.currentQuestionIndex = 0)
 
+  if(quizData.currentQuestionIndex === questionsLength) {
+    quizData.currentQuestionIndex = 0
+    quizData.currentScore = 0
+    document.getElementById('userScore').innerText = `Score: ${quizData.currentScore}`
+  }
   initQuestionPage();
 };
 

@@ -1,11 +1,10 @@
 'use strict';
-
+import {quizData} from '../data.js'
 /**
  * Create an Answer element
  * @returns {Element}
  */
 
-let score = 0
 export const createAnswerElement = (key, answerText , currentQuestion) => {
   const element = document.createElement('li');
   element.innerHTML = String.raw`
@@ -23,10 +22,11 @@ export const createAnswerElement = (key, answerText , currentQuestion) => {
     
     element.classList.add('selected')
     currentQuestion.selected = key
-    
-    currentQuestion.correct === currentQuestion.selected && (score += 1)
-    document.getElementById('userScore').innerText = `Score: ${score}`
 
+    currentQuestion.correct === currentQuestion.selected && (quizData.currentScore = quizData.currentScore += 1)
+    
+    document.getElementById('userScore').innerText = `Score: ${quizData.currentScore}`
+    
     if(key === currentQuestion.correct) {
       element.classList.add('right')
     } else {
