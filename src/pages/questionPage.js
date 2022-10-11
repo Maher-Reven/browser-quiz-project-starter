@@ -9,6 +9,8 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 
+import { createQuestionCounterElemenet } from '../views/questionCounterView.js';
+
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
@@ -17,7 +19,12 @@ export const initQuestionPage = () => {
 
   const questionElement = createQuestionElement(currentQuestion.text);
 
+  const questionCounterElement = createQuestionCounterElemenet(quizData);
+
+  userInterface.appendChild(questionCounterElement);
+
   userInterface.appendChild(questionElement);
+
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
