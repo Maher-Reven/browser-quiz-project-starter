@@ -10,13 +10,13 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 
+const questionsLength = quizData.questions.length
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
   document.getElementById('userScore').style.display= 'block'
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-
   const questionElement = createQuestionElement(currentQuestion.text);
 
   userInterface.appendChild(questionElement);
@@ -33,13 +33,13 @@ export const initQuestionPage = () => {
     .addEventListener('click', nextQuestion);
 
   document
-  .getElementById(GIVE_UP_BUTTON_ID)
-  .addEventListener('click', giveUp);
-
+    .getElementById(GIVE_UP_BUTTON_ID)
+    .addEventListener('click', giveUp);
 };
 
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+  quizData.currentQuestionIndex === questionsLength  && (quizData.currentQuestionIndex = 0)
 
   initQuestionPage();
 };
