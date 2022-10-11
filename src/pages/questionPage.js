@@ -16,7 +16,6 @@ export const initQuestionPage = () => {
 
   document.getElementById('userScore').style.display= 'block'
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-
   const questionElement = createQuestionElement(currentQuestion.text);
 
   userInterface.appendChild(questionElement);
@@ -50,6 +49,6 @@ const giveUp = () => {
     answer.classList = 'answer-item'
     answer.style.pointerEvents = "none";
   })
-  correct.classList.add('give-up')
+  correct.classList.add('right')
   correct.style.pointerEvents = "none";
 }

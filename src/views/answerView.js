@@ -1,4 +1,5 @@
 'use strict';
+import {quizData} from '../data.js'
 
 /**
  * Create an Answer element
@@ -31,7 +32,10 @@ export const createAnswerElement = (key, answerText , currentQuestion) => {
       element.classList.add('right')
     } else {
       element.classList.add('wrong')
+      const correct = document.getElementById(quizData.questions[quizData.currentQuestionIndex].correct);
+      correct.classList.add('right')
     }
+    Array.from(parent.children).forEach(child => (child.style.pointerEvents = "none"))
   }
 
   return element;
