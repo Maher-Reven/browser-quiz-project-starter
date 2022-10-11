@@ -9,6 +9,8 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 
+import { createProgressionBar } from '../views/progressionBarView.js';
+
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
@@ -16,6 +18,10 @@ export const initQuestionPage = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
   const questionElement = createQuestionElement(currentQuestion.text);
+
+  const progressionBarElement = createProgressionBar(quizData);
+
+  userInterface.appendChild(progressionBarElement)
 
   userInterface.appendChild(questionElement);
 
