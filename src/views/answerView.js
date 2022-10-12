@@ -7,7 +7,7 @@
 export const createAnswerElement = (key, answerText , currentQuestion) => {
   const element = document.createElement('li');
   element.innerHTML = String.raw`
-    ${key}: ${answerText};
+     ${answerText};
   `;
 
   element.classList.add('answer-item')
