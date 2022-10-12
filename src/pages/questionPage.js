@@ -7,6 +7,7 @@ import {
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
+import { result } from '../views/result.js';
 import { quizData } from '../data.js';
 
 export const initQuestionPage = () => {
@@ -34,7 +35,13 @@ export const initQuestionPage = () => {
 };
 
 const nextQuestion = () => {
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+   quizData.currentQuestionIndex++
+  if(quizData.currentQuestionIndex < quizData.questions.length ){
+    initQuestionPage();
 
-  initQuestionPage();
+  }
+  else{
+    result();
+  }
+
 };
