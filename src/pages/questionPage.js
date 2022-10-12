@@ -18,7 +18,7 @@ export const initQuestionPage = () => {
   document.getElementById('userScore').style.display= 'block'
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const questionElement = createQuestionElement(currentQuestion.text);
-
+ 
   userInterface.appendChild(questionElement);
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
