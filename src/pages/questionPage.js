@@ -15,10 +15,13 @@ export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
-  document.getElementById('userScore').style.display= 'block'
+  const scoreElement = document.getElementById('userScore')
+  scoreElement.style.display= 'block'
+  scoreElement.innerText = `Score: ${quizData.currentScore}`
+
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const questionElement = createQuestionElement(currentQuestion.text);
- 
+  
   userInterface.appendChild(questionElement);
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
@@ -43,8 +46,12 @@ const nextQuestion = () => {
   if(quizData.currentQuestionIndex === questionsLength) {
     quizData.currentQuestionIndex = 0
     quizData.currentScore = 0
-    document.getElementById('userScore').innerText = `Score: ${quizData.currentScore}`
+    scoreElement.innerText = `Score: ${quizData.currentScore}`
   }
+
+  localStorage.setItem('currentScore' , quizData.currentScore)
+  localStorage.setItem('currentIndex' , quizData.currentQuestionIndex)
+
   initQuestionPage();
 };
 
@@ -56,4 +63,11 @@ const giveUp = () => {
   })
   correct.classList.add('right')
   correct.style.pointerEvents = "none";
+}
+
+export const continueQuizApp = () => {
+  quizData.currentQuestionIndex = JSON.parse(localStorage.getItem('currentIndex'))
+  quizData.currentScore = JSON.parse(localStorage.getItem('currentScore'))
+
+  initQuestionPage()
 }
