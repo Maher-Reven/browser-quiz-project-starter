@@ -22,7 +22,6 @@ export const initQuestionPage = () => {
   
     userInterface.appendChild(progressionBarElement)
   const questionElement = createQuestionElement(currentQuestion.text);
- 
 
   userInterface.appendChild(questionElement);
 
