@@ -207,6 +207,10 @@ li:hover {
 }
 /* ============================ */
 
+.counterQuestion p {
+  font-weight: bold;
+  margin-top: 50px;
+}
 /*Welcome Page starts*/
 
 .welcome-page {
