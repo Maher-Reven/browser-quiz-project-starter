@@ -8,18 +8,21 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { result } from '../views/result.js';
+import { progressionBar } from '../views/progressionBar.js';
+
 import { quizData } from '../data.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
-
+ 
+ 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
   const questionElement = createQuestionElement(currentQuestion.text);
 
   userInterface.appendChild(questionElement);
-
+  
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
@@ -36,6 +39,9 @@ const nextQuestion = () => {
   quizData.currentQuestionIndex++;
   if (quizData.currentQuestionIndex < quizData.questions.length) {
     initQuestionPage();
+
+    progressionBar(quizData.currentQuestionIndex);
+   
   } else {
     result();
   }

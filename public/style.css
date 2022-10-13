@@ -378,3 +378,25 @@ li:hover {
 }
 
 /* =========================================================== */
+/* progressionBar start ------------ */
+.progress-container{
+  position: absolute;
+  width:200px;
+  height: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  top: 10px;
+  margin-left: 5px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.progress{
+  position: relative;
+  width:10px;
+  height: 6px;
+  border-radius: 10px;
+  background-color: rgb(27, 90, 52);
+  margin-left: 3px;
+  
+}
