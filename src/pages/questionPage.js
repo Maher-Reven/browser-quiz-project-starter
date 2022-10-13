@@ -17,9 +17,14 @@ export const initQuestionPage = () => {
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
-  const progressionBarElement = createProgressionBar(claculateProgressionBar(quizData.currentQuestionIndex+1,quizData.questions.length));
-  
-  userInterface.appendChild(progressionBarElement)
+  const progressionBarElement = createProgressionBar(
+    claculateProgressionBar(
+      quizData.currentQuestionIndex + 1,
+      quizData.questions.length
+    )
+  );
+
+  userInterface.appendChild(progressionBarElement);
   const questionElement = createQuestionElement(currentQuestion.text);
 
   userInterface.appendChild(questionElement);
@@ -42,12 +47,11 @@ const nextQuestion = () => {
   initQuestionPage();
 };
 
-const claculateProgressionBar = (currentQuestion,numberOfQuestion)=>{
+const claculateProgressionBar = (currentQuestion, numberOfQuestion) => {
+  const width = (currentQuestion * 100) / numberOfQuestion;
 
-        const width = (currentQuestion * 100) / numberOfQuestion;
-        
-        if (currentQuestion > numberOfQuestion) {
-            return;
-          }
-          return width;
-}
+  if (currentQuestion > numberOfQuestion) {
+    return;
+  }
+  return width;
+};
