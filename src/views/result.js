@@ -15,8 +15,8 @@ export const result = () => {
   const numContainer = document.createElement('div');
   const numContainer2 = document.createElement('div');
   const score = document.createElement('img');
-  const complement = document.createElement('h1');
-  const complement2 = document.createElement('h1');
+  const wrongAnswersNum = document.createElement('h1');
+  const rightAnswersNum = document.createElement('h1');
   const percentageNum = document.createElement('h1');
   const check = document.createElement('span');
   const restart = document.createElement('button');
@@ -24,8 +24,8 @@ export const result = () => {
   // =================================================
 
   // ADD TEXT-CONTENT----------------------
-  complement.textContent = '6';
-  complement2.textContent = '4';
+  wrongAnswersNum.textContent = '6';
+  rightAnswersNum.textContent = '4';
   percentageNum.textContent = '40%';
   check.textContent = 'check';
   check2.textContent = 'close';
@@ -39,8 +39,8 @@ export const result = () => {
   percentage.classList.add('percentage');
   resultNum.classList.add('class', 'resultNum');
   percentageNum.classList.add('class', 'percentageNum');
-  complement.classList.add('complement');
-  complement2.classList.add('complement', 'third');
+  wrongAnswersNum.classList.add('answer-numbers');
+  rightAnswersNum.classList.add('answer-numbers', 'third');
   result.classList.add('result');
   check.classList.add('material-symbols-outlined');
   restart.classList.add('material-symbols-outlined', 'restart');
@@ -60,8 +60,8 @@ export const result = () => {
   result.appendChild(score);
   numContainer.appendChild(check);
   numContainer2.appendChild(check2);
-  numContainer.appendChild(complement);
-  numContainer2.appendChild(complement2);
+  numContainer.appendChild(wrongAnswersNum);
+  numContainer2.appendChild(rightAnswersNum);
   result.appendChild(resultNum);
   result.appendChild(restart);
   //  =================================================================================================================
