@@ -8,6 +8,7 @@ import {
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
+import { result } from '../views/result.js';
 import { quizData } from '../data.js';
 
 const questionsLength = quizData.questions.length;
@@ -20,6 +21,7 @@ export const initQuestionPage = () => {
   scoreElement.innerText = `Score: ${quizData.currentScore}`;
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+
   const questionElement = createQuestionElement(currentQuestion.text);
 
   userInterface.appendChild(questionElement);
