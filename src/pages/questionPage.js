@@ -7,6 +7,7 @@ import {
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
+import { result } from '../views/result.js';
 import { quizData } from '../data.js';
 
 export const initQuestionPage = () => {
@@ -14,6 +15,7 @@ export const initQuestionPage = () => {
   userInterface.innerHTML = '';
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+
   const questionElement = createQuestionElement(currentQuestion.text);
 
   userInterface.appendChild(questionElement);
@@ -31,7 +33,10 @@ export const initQuestionPage = () => {
 };
 
 const nextQuestion = () => {
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-
-  initQuestionPage();
+  quizData.currentQuestionIndex++;
+  if (quizData.currentQuestionIndex < quizData.questions.length) {
+    initQuestionPage();
+  } else {
+    result();
+  }
 };
