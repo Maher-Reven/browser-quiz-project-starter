@@ -33,18 +33,18 @@ export const result = () => {
   // ================================
 
   // ADDITION OF DIFFERENT ATTRIBUTES -----------------
-  score.setAttribute('class', 'score');
-  numContainer.setAttribute('class', 'num-container');
-  numContainer2.setAttribute('class', 'num-container2');
-  percentage.setAttribute('class', 'percentage');
-  resultNum.setAttribute('class', 'resultNum');
-  percentageNum.setAttribute('class', 'percentageNum');
-  complement.setAttribute('class', 'complement');
-  complement2.setAttribute('class', 'complement third');
-  result.setAttribute('class', 'result');
-  check.setAttribute('class', 'material-symbols-outlined');
-  restart.setAttribute('class', 'material-symbols-outlined restart');
-  check2.setAttribute('class', 'material-symbols-outlined second');
+  score.classList.add('score');
+  numContainer.classList.add('wrong-answers');
+  numContainer2.classList.add('right-answers');
+  percentage.classList.add('percentage');
+  resultNum.classList.add('class', 'resultNum');
+  percentageNum.classList.add('class', 'percentageNum');
+  complement.classList.add('complement');
+  complement2.classList.add('complement', 'third');
+  result.classList.add('result');
+  check.classList.add('material-symbols-outlined');
+  restart.classList.add('material-symbols-outlined', 'restart');
+  check2.classList.add('material-symbols-outlined', 'second');
   score.setAttribute(
     'src',
     'https://media.istockphoto.com/vectors/sketch-icon-in-black-trophy-vector-id910592448?k=20&m=910592448&s=170667a&w=0&h=m33c9xZUFuqyrBuDBxbPvJrr0EOntg-YlIdaNkUIW_g='
