@@ -1,7 +1,11 @@
 'use strict';
 
-import { ANSWERS_LIST_ID } from '../constants.js';
-import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
+import {
+  ANSWERS_LIST_ID,
+  GIVE_UP_BUTTON_ID,
+  NEXT_QUESTION_BUTTON_ID,
+} from '../constants.js';
+import { quizData } from '../data.js';
 
 /**
  * Create a full question element
@@ -15,11 +19,18 @@ export const createQuestionElement = (question) => {
     <h1 class='question'>${question}</h1>
 
     <ul id="${ANSWERS_LIST_ID}">
-    
     </ul>
 
+    <button id="${GIVE_UP_BUTTON_ID}">
+      Give up
+    </button>
+
     <button id="${NEXT_QUESTION_BUTTON_ID}">
-      Next question
+      ${
+        quizData.currentQuestionIndex < quizData.questions.length - 1
+          ? 'Next question'
+          : 'Reset'
+      }
     </button>
   `;
 
