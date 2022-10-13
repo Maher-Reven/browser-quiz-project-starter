@@ -1,6 +1,6 @@
 'use strict';
 
-import { START_QUIZ_BUTTON_ID } from '../constants.js';
+import { START_QUIZ_BUTTON_ID, CONTINUE_QUIZ } from '../constants.js';
 
 /**
  * Create the welcome screen
@@ -12,6 +12,7 @@ export const createWelcomeElement = () => {
     <div class='welcome-page'>
       <div class="welcome-page-item">
           <h1>Welcome</h1>
+          <button id="${CONTINUE_QUIZ}">continue quiz</button>
           <button class="btn mt-4" id="${START_QUIZ_BUTTON_ID}">start quiz</button>
       </div>
       <div class="welcome-page-item">
