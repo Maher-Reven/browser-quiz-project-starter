@@ -16,9 +16,7 @@ export const initQuestionPage = () => {
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
-
   const questionElement = createQuestionElement(currentQuestion.text);
- 
 
   userInterface.appendChild(questionElement);
 
@@ -35,13 +33,10 @@ export const initQuestionPage = () => {
 };
 
 const nextQuestion = () => {
-   quizData.currentQuestionIndex++
-  if(quizData.currentQuestionIndex < quizData.questions.length ){
+  quizData.currentQuestionIndex++;
+  if (quizData.currentQuestionIndex < quizData.questions.length) {
     initQuestionPage();
-
-  }
-  else{
+  } else {
     result();
   }
-
 };
