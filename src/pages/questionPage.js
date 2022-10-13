@@ -23,6 +23,7 @@ export const initQuestionPage = () => {
   const questionCounterElement = createQuestionCounterElemenet(quizData.currentQuestionIndex+1,quizData.questions.length);
 
   userInterface.appendChild(questionCounterElement);
+  const questionElement = createQuestionElement(currentQuestion.text);
 
   userInterface.appendChild(questionElement);
 
