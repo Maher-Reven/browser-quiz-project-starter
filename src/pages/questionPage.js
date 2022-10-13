@@ -11,22 +11,19 @@ import { createAnswerElement } from '../views/answerView.js';
 import { result } from '../views/result.js';
 import { progressionBar } from '../views/progressionBar.js';
 
+
 import { quizData } from '../data.js';
+import { showScore } from '../views/score.js';
 
 const questionsLength = quizData.questions.length;
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
-<<<<<<< HEAD
- 
- 
-=======
 
   const scoreElement = document.getElementById('userScore');
   scoreElement.style.display = 'block';
   scoreElement.innerText = `Score: ${quizData.currentScore}`;
 
->>>>>>> master
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
   const questionElement = createQuestionElement(currentQuestion.text);
@@ -44,33 +41,25 @@ export const initQuestionPage = () => {
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
 
-  document.getElementById(GIVE_UP_BUTTON_ID).addEventListener('click', giveUp);
+  // document.getElementById(GIVE_UP_BUTTON_ID).addEventListener('click', giveUp);
 };
 
 const nextQuestion = () => {
-<<<<<<< HEAD
   quizData.currentQuestionIndex++;
   if (quizData.currentQuestionIndex < quizData.questions.length) {
     initQuestionPage();
+    showScore(quizData.currentScore)
 
     progressionBar(quizData.currentQuestionIndex);
+    localStorage.setItem('currentScore', quizData.currentScore);
+    localStorage.setItem('currentIndex', quizData.currentQuestionIndex);
    
   } else {
     result();
-=======
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-
-  if (quizData.currentQuestionIndex === questionsLength) {
-    quizData.currentQuestionIndex = 0;
-    quizData.currentScore = 0;
-    scoreElement.innerText = `Score: ${quizData.currentScore}`;
->>>>>>> master
   }
 
-  localStorage.setItem('currentScore', quizData.currentScore);
-  localStorage.setItem('currentIndex', quizData.currentQuestionIndex);
 
-  initQuestionPage();
+  // initQuestionPage();
 };
 
 const giveUp = () => {

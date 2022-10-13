@@ -12,8 +12,8 @@ export const createWelcomeElement = () => {
     <div class='welcome-page'>
       <div class="welcome-page-item">
           <h1>Welcome</h1>
+          <button class="btn mt-4 " id="${START_QUIZ_BUTTON_ID}">play</button>
           <button id="${CONTINUE_QUIZ}">continue quiz</button>
-          <button class="btn mt-4" id="${START_QUIZ_BUTTON_ID}">start quiz</button>
       </div>
       <div class="welcome-page-item">
         <img class="welcome-page-img " src="./public/assets/cube.png" alt="">    

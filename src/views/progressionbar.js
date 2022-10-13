@@ -1,7 +1,5 @@
 
 import {
-  ANSWERS_LIST_ID,
-  NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
 } from '../constants.js';
 
@@ -17,7 +15,7 @@ progress.classList.add('progress')
 userInterface.appendChild(progressionDiv)
 progressionDiv.appendChild(progress)
 let num = 21.5;
-console.log(currentIndex)
+
 
 num *= currentIndex;
 
