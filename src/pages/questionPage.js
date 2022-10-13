@@ -16,13 +16,10 @@ export const initQuestionPage = () => {
   userInterface.innerHTML = '';
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-
-
-    const progressionBarElement = createProgressionBar(claculateProgressionBar(quizData.currentQuestionIndex+1,quizData.questions.length));
+  const progressionBarElement = createProgressionBar(claculateProgressionBar(quizData.currentQuestionIndex+1,quizData.questions.length));
   
-    userInterface.appendChild(progressionBarElement)
+  userInterface.appendChild(progressionBarElement)
   const questionElement = createQuestionElement(currentQuestion.text);
- 
 
   userInterface.appendChild(questionElement);
 
