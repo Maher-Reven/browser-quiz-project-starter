@@ -18,7 +18,6 @@ export const initQuestionPage = () => {
 
   
 
-  const questionElement = createQuestionElement(currentQuestion.text);
  
   const questionCounterElement = createQuestionCounterElemenet(quizData.currentQuestionIndex+1,quizData.questions.length);
 
