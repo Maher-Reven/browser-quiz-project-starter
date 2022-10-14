@@ -5,6 +5,7 @@ import { ANSWERS_LIST_ID } from '../constants.js';
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 import { progressionBar } from './progressionBar.js';
 import { quizData } from '../data.js';
+
 /**
  * Create a full question element
  * @returns {Element}
@@ -22,17 +23,15 @@ export const createQuestionElement = (question) => {
 
     <ul id="${ANSWERS_LIST_ID}">
     </ul>
- <button id="${NEXT_QUESTION_BUTTON_ID}" class="next-btn">
+
+  <button id="${NEXT_QUESTION_BUTTON_ID}" class="next-btn">
      ${'Next question'}
     </button>
+
+    <button id=${GIVE_UP_BUTTON_ID} class='give-up-button'>Give Up</button>   
+ 
    
   `;
 
   return element;
 };
-
-//  <button id="${GIVE_UP_BUTTON_ID}">
-//       Give up
-//     </button>
-
-//
