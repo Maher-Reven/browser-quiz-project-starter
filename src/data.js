@@ -37,21 +37,23 @@ export const quizData = {
       ],
     },
     {
-      text: 'Which of these methods create a new array without mutated the original array where the data is coming from ?',
+      text:
+        'Which of these methods create a new array without mutated the original array where the data is coming from ?',
       answers: {
         a: 'every()',
         b: 'fill()',
         c: 'filter()',
-        d: 'find()'
+        d: 'find()',
       },
       correct: 'c',
       selected: null,
       links: [
         {
           text: 'MDN',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter',
-        }
-      ]
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter',
+        },
+      ],
     },
     {
       text: 'What does `typeof` do?',
@@ -124,18 +126,20 @@ export const quizData = {
         a: 'It refers current object',
         b: 'It refers previous object',
         c: 'It is variable which contains value',
-        d: 'None of the above'
+        d: 'None of the above',
       },
       correct: 'a',
       selected: null,
       links: [
         {
           text: 'MDN',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this',
         },
         {
           text: 'Tutorials Teacher',
-          href: 'https://www.tutorialsteacher.com/javascript/this-keyword-in-javascript',
+          href:
+            'https://www.tutorialsteacher.com/javascript/this-keyword-in-javascript',
         },
       ],
     },
@@ -151,7 +155,8 @@ export const quizData = {
       links: [
         {
           text: 'Javapoint.com',
-          href: 'https://www.javatpoint.com/how-to-add-javascript-to-html#:~:text=To%20add%20the%20JavaScript%20code%20into%20the%20HTML,of%20the%20web%20page%20that%20the%20users%20use.',
+          href:
+            'https://www.javatpoint.com/how-to-add-javascript-to-html#:~:text=To%20add%20the%20JavaScript%20code%20into%20the%20HTML,of%20the%20web%20page%20that%20the%20users%20use.',
         },
         {
           text: 'W3school',
@@ -160,7 +165,8 @@ export const quizData = {
       ],
     },
     {
-      text: 'Which function is used to know if the array contains a specific element value or not ?',
+      text:
+        'Which function is used to know if the array contains a specific element value or not ?',
       answers: {
         a: 'filter',
         b: 'map',
@@ -171,7 +177,8 @@ export const quizData = {
       links: [
         {
           text: 'javascript.info',
-          href: 'https://javascript.info/array-methods#indexof-lastindexof-and-includes',
+          href:
+            'https://javascript.info/array-methods#indexof-lastindexof-and-includes',
         },
         {
           text: 'MDN',
@@ -193,7 +200,8 @@ export const quizData = {
       links: [
         {
           text: 'MDN',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round',
         },
         {
           text: 'W3school',
@@ -214,13 +222,15 @@ export const quizData = {
       links: [
         {
           text: 'codecademy.',
-          href: 'https://www.codecademy.com/learn/game-dev-learn-javascript-higher-order-functions-and-iterators/modules/game-dev-learn-javascript-iterators/cheatsheet#:~:text=In%20Javascript%2C%20functions%20can%20be,and%2For%20returns%20a%20function.',
+          href:
+            'https://www.codecademy.com/learn/game-dev-learn-javascript-higher-order-functions-and-iterators/modules/game-dev-learn-javascript-iterators/cheatsheet#:~:text=In%20Javascript%2C%20functions%20can%20be,and%2For%20returns%20a%20function.',
         },
         {
           text: 'MDN',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice',
         },
       ],
-    }
+    },
   ],
 };
