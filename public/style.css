@@ -14,7 +14,6 @@
   margin: 0px;
 }
 
-
 body {
   font-family: 'Lato', sans-serif, Arial, Helvetica, sans-serif;
   font-size: 16px;
@@ -99,9 +98,8 @@ h2 {
   font-family: 'Designer Notes Bold', sans-serif;
 }
 .container {
-  
   background-image: url(https://i.pinimg.com/originals/22/66/19/226619a3bd7ddd41ce861f2c96976b79.jpg);
- background-size: cover;
+  background-size: cover;
   background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
@@ -130,17 +128,16 @@ ul {
 
 .right {
   border: 2px solid rgb(2, 255, 2);
-  
+
   transition: all 2s ease;
   font-size: larger;
-box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(42, 249, 0, 0.09) 0px 4px 2px, rgba(37, 121, 3, 0.09) 0px 8px 4px, rgba(68, 176, 18, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
+    rgba(42, 249, 0, 0.09) 0px 4px 2px, rgba(37, 121, 3, 0.09) 0px 8px 4px,
+    rgba(68, 176, 18, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 .wrong {
   border: 2px solid rgb(248, 6, 6);
- 
- 
-
 }
 
 /* show score  */
@@ -220,9 +217,9 @@ li:hover {
   margin-top: 50px;
 }
 /*Welcome Page starts*/
-body{
+body {
   background-image: url(https://i.pinimg.com/originals/f1/0f/4e/f10f4eecbafe16d7a2b50a8e06d121f8.gif);
-  
+
   background-repeat: no-repeat;
   font-family: 'Designer Notes Bold', sans-serif;
 }
@@ -233,7 +230,7 @@ body{
   padding: 50px;
   justify-content: center;
   align-items: center;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   font-family: 'Designer Notes Bold', sans-serif;
 }
 
@@ -424,8 +421,8 @@ body{
 
 /* =========================================================== */
 /* progressionBar start ------------ */
-.progress-container{
-  width:200px;
+.progress-container {
+  width: 200px;
   height: 10px;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
@@ -436,14 +433,13 @@ body{
   align-items: center;
 }
 
-.progress{
+.progress {
   position: relative;
-  width:10px;
+  width: 10px;
   height: 6px;
   border-radius: 10px;
   background-color: rgb(27, 90, 52);
   margin-left: 3px;
-  
 }
 /* ========================== */
 .score-container {
@@ -451,39 +447,37 @@ body{
   width: 50px;
   height: 50px;
   background-color: white;
-  border :2px solid rgb(27, 90, 52);
+  border: 2px solid rgb(27, 90, 52);
   border-radius: 50%;
-  color:white;
-  
+  color: white;
+
   top: 75px;
-  right:29%;
+  right: 29%;
   margin-left: 5px;
-  
+
   text-align: center;
-  
 }
 
 .score-num {
   position: relative;
- margin: 14px;
+  margin: 14px;
   font-size: 1.5rem;
-  color:rgb(151, 239, 151);
+  color: rgb(151, 239, 151);
 
   font-family: 'Designer Notes Bold', sans-serif;
-
 }
-#continue-quiz{
- background-color: transparent;
- position: absolute;
- width:100px;
- height: 100px;
- bottom: 0;
- right:-50px;
- border: none;
- border-radius: 50%;
- font-size: 1.2rem;
- background-color: rgb(82, 71, 71);
+#continue-quiz {
+  background-color: transparent;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  bottom: 0;
+  right: -50px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  background-color: rgb(82, 71, 71);
 }
-#continue-quiz:hover{
-  color:rgb(135, 223, 135);
+#continue-quiz:hover {
+  color: rgb(135, 223, 135);
 }

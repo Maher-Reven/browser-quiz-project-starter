@@ -11,11 +11,9 @@ import { createAnswerElement } from '../views/answerView.js';
 import { result } from '../views/result.js';
 import { progressionBar } from '../views/progressionBar.js';
 
-
 import { quizData } from '../data.js';
 import { createQuestionCounterElemenet } from '../views/questionCounterView.js';
 import { showScore } from '../views/score.js';
-
 
 const questionsLength = quizData.questions.length;
 export const initQuestionPage = () => {
@@ -37,7 +35,7 @@ export const initQuestionPage = () => {
   const questionElement = createQuestionElement(currentQuestion.text);
 
   userInterface.appendChild(questionElement);
-  
+
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
@@ -56,16 +54,14 @@ const nextQuestion = () => {
   quizData.currentQuestionIndex++;
   if (quizData.currentQuestionIndex < quizData.questions.length) {
     initQuestionPage();
-    showScore(quizData.currentScore)
+    showScore(quizData.currentScore);
 
     progressionBar(quizData.currentQuestionIndex);
     localStorage.setItem('currentScore', quizData.currentScore);
     localStorage.setItem('currentIndex', quizData.currentQuestionIndex);
-   
   } else {
     result();
   }
-
 
   // initQuestionPage();
 };

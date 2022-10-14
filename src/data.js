@@ -78,7 +78,7 @@ export const quizData = {
         },
       ],
     },
-     {
+    {
       text: 'What does `typeof` do?',
       answers: {
         a: 'changes the type of a primitive value',
