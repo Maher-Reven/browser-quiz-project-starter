@@ -1,5 +1,6 @@
 import { quizData } from '../data.js';
 import { USER_INTERFACE_ID } from '../constants.js';
+import { initQuestionPage } from '../pages/questionPage.js';
 
 export const result = () => {
   // RESET THE DOM--------------------------------------
@@ -24,9 +25,16 @@ export const result = () => {
   // =================================================
 
   // ADD TEXT-CONTENT----------------------
-  wrongAnswersNum.textContent = '6';
-  rightAnswersNum.textContent = '4';
-  percentageNum.textContent = '40%';
+
+  let rightAnswers = quizData.currentScore;
+
+  let wrongAnswers = quizData.questions.length - quizData.currentScore;
+  wrongAnswersNum.textContent = rightAnswers;
+
+  rightAnswersNum.textContent = wrongAnswers;
+  percentageNum.textContent = ` ${
+    (rightAnswers / quizData.questions.length).toFixed(2) * 100
+  }% `;
   check.textContent = 'check';
   check2.textContent = 'close';
   restart.textContent = 'refresh';
@@ -65,4 +73,11 @@ export const result = () => {
   result.appendChild(resultNum);
   result.appendChild(restart);
   //  =================================================================================================================
+
+  restart.addEventListener('click', restartPage);
+};
+const restartPage = () => {
+  quizData.currentQuestionIndex = 0;
+  quizData.currentScore = 0;
+  initQuestionPage();
 };
