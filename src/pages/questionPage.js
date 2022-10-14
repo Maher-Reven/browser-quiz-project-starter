@@ -10,6 +10,7 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { result } from '../views/result.js';
 import { quizData } from '../data.js';
+import { createQuestionCounterElemenet } from '../views/questionCounterView.js';
 
 import { createProgressionBar } from '../views/progressionBarView.js';
 
@@ -32,6 +33,12 @@ export const initQuestionPage = () => {
   );
 
   userInterface.appendChild(progressionBarElement);
+  const questionCounterElement = createQuestionCounterElemenet(
+    quizData.currentQuestionIndex + 1,
+    quizData.questions.length
+  );
+
+  userInterface.appendChild(questionCounterElement);
   const questionElement = createQuestionElement(currentQuestion.text);
 
   userInterface.appendChild(questionElement);

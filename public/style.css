@@ -219,6 +219,10 @@ li:hover {
   background-color: #efa741;
 }
 /*progression_bar--end*/
+.counterQuestion p {
+  font-weight: bold;
+  margin-top: 50px;
+}
 /*Welcome Page starts*/
 
 .welcome-page {
