@@ -14,6 +14,10 @@ import { progressionBar } from '../views/progressionBar.js';
 import { quizData } from '../data.js';
 import { createQuestionCounterElemenet } from '../views/questionCounterView.js';
 import { showScore } from '../views/score.js';
+import {
+  changeGiveUPButtonToNext,
+  changeNextButtonToGiveUp,
+} from '../utilities/nextAndGiveUpButtonChange.js';
 
 const questionsLength = quizData.questions.length;
 export const initQuestionPage = () => {
@@ -38,16 +42,23 @@ export const initQuestionPage = () => {
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
+  const nextElement = document.getElementById(NEXT_QUESTION_BUTTON_ID);
+  const giveUpElement = document.getElementById(GIVE_UP_BUTTON_ID);
+  const timerGiveup = changeNextButtonToGiveUp(nextElement, giveUpElement);
+
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-    const answerElement = createAnswerElement(key, answerText, currentQuestion);
+    const answerElement = createAnswerElement(
+      key,
+      answerText,
+      currentQuestion,
+      timerGiveup
+    );
     answersListElement.appendChild(answerElement);
   }
 
-  document
-    .getElementById(NEXT_QUESTION_BUTTON_ID)
-    .addEventListener('click', nextQuestion);
+  giveUpElement.addEventListener('click', giveUp);
 
-  // document.getElementById(GIVE_UP_BUTTON_ID).addEventListener('click', giveUp);
+  nextElement.addEventListener('click', nextQuestion);
 };
 
 const nextQuestion = () => {
@@ -78,6 +89,9 @@ const giveUp = () => {
   );
   correct.classList.add('right');
   correct.style.pointerEvents = 'none';
+  const nextElement = document.getElementById(NEXT_QUESTION_BUTTON_ID);
+  const giveUpElement = document.getElementById(GIVE_UP_BUTTON_ID);
+  changeGiveUPButtonToNext(nextElement, giveUpElement);
 };
 
 export const continueQuizApp = () => {

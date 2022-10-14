@@ -5,8 +5,15 @@ import { quizData } from '../data.js';
  * Create an Answer element
  * @returns {Element}
  */
+import { changeGiveUPButtonToNext } from '../utilities/nextAndGiveUpButtonChange.js';
+import { NEXT_QUESTION_BUTTON_ID, GIVE_UP_BUTTON_ID } from '../constants.js';
 
-export const createAnswerElement = (key, answerText, currentQuestion) => {
+export const createAnswerElement = (
+  key,
+  answerText,
+  currentQuestion,
+  timerGiveup
+) => {
   const element = document.createElement('li');
   element.innerHTML = String.raw`
     ${answerText};
@@ -46,6 +53,12 @@ export const createAnswerElement = (key, answerText, currentQuestion) => {
     Array.from(parent.children).forEach(
       (child) => (child.style.pointerEvents = 'none')
     );
+
+    clearTimeout(timerGiveup);
+
+    const nextElement = document.getElementById(NEXT_QUESTION_BUTTON_ID);
+    const giveUpElement = document.getElementById(GIVE_UP_BUTTON_ID);
+    changeGiveUPButtonToNext(nextElement, giveUpElement);
   }
 
   return element;
