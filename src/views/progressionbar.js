@@ -1,4 +1,3 @@
-
 import {
   USER_INTERFACE_ID,
 } from '../constants.js';

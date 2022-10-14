@@ -99,8 +99,9 @@ h2 {
   font-family: 'Designer Notes Bold', sans-serif;
 }
 .container {
-  background-image: url(https://i.pinimg.com/originals/f1/0f/4e/f10f4eecbafe16d7a2b50a8e06d121f8.gif);
-  object-fit: cover;
+  
+  background-image: url(https://i.pinimg.com/originals/22/66/19/226619a3bd7ddd41ce861f2c96976b79.jpg);
+ background-size: cover;
   background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
@@ -216,8 +217,9 @@ li:hover {
 
 /*Welcome Page starts*/
 body{
-  background-image: url(https://i.pinimg.com/originals/22/66/19/226619a3bd7ddd41ce861f2c96976b79.jpg);
-  background-size: cover;
+  background-image: url(https://i.pinimg.com/originals/f1/0f/4e/f10f4eecbafe16d7a2b50a8e06d121f8.gif);
+  
+  background-repeat: no-repeat;
   font-family: 'Designer Notes Bold', sans-serif;
 }
 .welcome-page {
@@ -227,7 +229,7 @@ body{
   padding: 50px;
   justify-content: center;
   align-items: center;
-  color:white;
+  color:rgb(255, 255, 255);
   font-family: 'Designer Notes Bold', sans-serif;
 }
 
@@ -469,8 +471,15 @@ body{
 #continue-quiz{
  background-color: transparent;
  position: absolute;
+ width:100px;
+ height: 100px;
  bottom: 0;
+ right:-50px;
+ border: none;
+ border-radius: 50%;
+ font-size: 1.2rem;
+ background-color: rgb(82, 71, 71);
 }
 #continue-quiz:hover{
-  color:rgb(54, 195, 54);
+  color:rgb(135, 223, 135);
 }
