@@ -215,6 +215,22 @@ li:hover {
 }
 /* ============================ */
 
+/*progression_bar--start*/
+#progression_bar {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#progression_bar div {
+  width: 0%;
+  height: 30px;
+  background-color: #efa741;
+}
+/*progression_bar--end*/
+.counterQuestion p {
+  font-weight: bold;
+  margin-top: 50px;
+}
 /*Welcome Page starts*/
 body{
   background-image: url(https://i.pinimg.com/originals/f1/0f/4e/f10f4eecbafe16d7a2b50a8e06d121f8.gif);
