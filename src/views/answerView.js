@@ -30,10 +30,6 @@ export const createAnswerElement = (key, answerText, currentQuestion) => {
       quizData.currentScore = quizData.currentScore += 1;
     }
 
-    document.getElementById(
-      'userScore'
-    ).innerText = `Score: ${quizData.currentScore}`;
-
     if (key === currentQuestion.correct) {
       element.classList.add('right');
     } else {
