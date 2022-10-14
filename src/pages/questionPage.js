@@ -14,8 +14,8 @@ import { progressionBar } from '../views/progressionBar.js';
 
 import { quizData } from '../data.js';
 import { createQuestionCounterElemenet } from '../views/questionCounterView.js';
-
 import { showScore } from '../views/score.js';
+
 
 const questionsLength = quizData.questions.length;
 export const initQuestionPage = () => {
