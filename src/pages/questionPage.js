@@ -9,10 +9,13 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { result } from '../views/result.js';
+import { progressionBar } from '../views/progressionBar.js';
+
+
 import { quizData } from '../data.js';
 import { createQuestionCounterElemenet } from '../views/questionCounterView.js';
 
-import { createProgressionBar } from '../views/progressionBarView.js';
+import { showScore } from '../views/score.js';
 
 const questionsLength = quizData.questions.length;
 export const initQuestionPage = () => {
@@ -25,14 +28,6 @@ export const initQuestionPage = () => {
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
-  const progressionBarElement = createProgressionBar(
-    claculateProgressionBar(
-      quizData.currentQuestionIndex + 1,
-      quizData.questions.length
-    )
-  );
-
-  userInterface.appendChild(progressionBarElement);
   const questionCounterElement = createQuestionCounterElemenet(
     quizData.currentQuestionIndex + 1,
     quizData.questions.length
@@ -42,7 +37,7 @@ export const initQuestionPage = () => {
   const questionElement = createQuestionElement(currentQuestion.text);
 
   userInterface.appendChild(questionElement);
-
+  
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
@@ -54,22 +49,25 @@ export const initQuestionPage = () => {
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
 
-  document.getElementById(GIVE_UP_BUTTON_ID).addEventListener('click', giveUp);
+  // document.getElementById(GIVE_UP_BUTTON_ID).addEventListener('click', giveUp);
 };
 
 const nextQuestion = () => {
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+  quizData.currentQuestionIndex++;
+  if (quizData.currentQuestionIndex < quizData.questions.length) {
+    initQuestionPage();
+    showScore(quizData.currentScore)
 
-  if (quizData.currentQuestionIndex === questionsLength) {
-    quizData.currentQuestionIndex = 0;
-    quizData.currentScore = 0;
-    scoreElement.innerText = `Score: ${quizData.currentScore}`;
+    progressionBar(quizData.currentQuestionIndex);
+    localStorage.setItem('currentScore', quizData.currentScore);
+    localStorage.setItem('currentIndex', quizData.currentQuestionIndex);
+   
+  } else {
+    result();
   }
 
-  localStorage.setItem('currentScore', quizData.currentScore);
-  localStorage.setItem('currentIndex', quizData.currentQuestionIndex);
 
-  initQuestionPage();
+  // initQuestionPage();
 };
 
 const giveUp = () => {
@@ -93,13 +91,4 @@ export const continueQuizApp = () => {
   quizData.currentScore = JSON.parse(localStorage.getItem('currentScore'));
 
   initQuestionPage();
-};
-
-const claculateProgressionBar = (currentQuestion, numberOfQuestion) => {
-  const width = (currentQuestion * 100) / numberOfQuestion;
-
-  if (currentQuestion > numberOfQuestion) {
-    return;
-  }
-  return width;
 };
