@@ -12,6 +12,8 @@ import { result } from '../views/result.js';
 import { quizData } from '../data.js';
 import { createQuestionCounterElemenet } from '../views/questionCounterView.js';
 
+import { createProgressionBar } from '../views/progressionBarView.js';
+
 const questionsLength = quizData.questions.length;
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -23,6 +25,14 @@ export const initQuestionPage = () => {
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
+  const progressionBarElement = createProgressionBar(
+    claculateProgressionBar(
+      quizData.currentQuestionIndex + 1,
+      quizData.questions.length
+    )
+  );
+
+  userInterface.appendChild(progressionBarElement);
   const questionCounterElement = createQuestionCounterElemenet(
     quizData.currentQuestionIndex + 1,
     quizData.questions.length
@@ -83,4 +93,13 @@ export const continueQuizApp = () => {
   quizData.currentScore = JSON.parse(localStorage.getItem('currentScore'));
 
   initQuestionPage();
+};
+
+const claculateProgressionBar = (currentQuestion, numberOfQuestion) => {
+  const width = (currentQuestion * 100) / numberOfQuestion;
+
+  if (currentQuestion > numberOfQuestion) {
+    return;
+  }
+  return width;
 };

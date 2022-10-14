@@ -207,6 +207,18 @@ li:hover {
 }
 /* ============================ */
 
+/*progression_bar--start*/
+#progression_bar {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#progression_bar div {
+  width: 0%;
+  height: 30px;
+  background-color: #efa741;
+}
+/*progression_bar--end*/
 .counterQuestion p {
   font-weight: bold;
   margin-top: 50px;
