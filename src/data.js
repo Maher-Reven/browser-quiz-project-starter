@@ -146,9 +146,9 @@ export const quizData = {
     {
       text: 'Where is the correct place to insert JavaScript in HTML?',
       answers: {
-        a: 'Both the <head> section and the <body> section are correct',
-        b: 'The <head> section',
-        c: 'The <body> section',
+        a: 'Both the head section and the body section are correct',
+        b: 'The head section',
+        c: 'The body section',
       },
       correct: 'a',
       selected: null,

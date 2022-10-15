@@ -12,7 +12,7 @@ import { result } from '../views/result.js';
 import { progressionBar } from '../views/progressionBar.js';
 
 import { quizData } from '../data.js';
-import { createQuestionCounterElemenet } from '../views/questionCounterView.js';
+
 import { showScore } from '../views/score.js';
 import {
   changeGiveUPButtonToNext,
@@ -24,18 +24,8 @@ export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
-  const scoreElement = document.getElementById('userScore');
-  scoreElement.style.display = 'block';
-  scoreElement.innerText = `Score: ${quizData.currentScore}`;
-
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
-  const questionCounterElement = createQuestionCounterElemenet(
-    quizData.currentQuestionIndex + 1,
-    quizData.questions.length
-  );
-
-  userInterface.appendChild(questionCounterElement);
   const questionElement = createQuestionElement(currentQuestion.text);
 
   userInterface.appendChild(questionElement);
@@ -67,14 +57,13 @@ const nextQuestion = () => {
     initQuestionPage();
     showScore(quizData.currentScore);
 
-    progressionBar(quizData.currentQuestionIndex);
+    progressionBar();
+
     localStorage.setItem('currentScore', quizData.currentScore);
     localStorage.setItem('currentIndex', quizData.currentQuestionIndex);
   } else {
     result();
   }
-
-  // initQuestionPage();
 };
 
 const giveUp = () => {

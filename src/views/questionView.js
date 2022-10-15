@@ -14,8 +14,6 @@ export const createQuestionElement = (question) => {
   const element = document.createElement('div');
   element.classList.add('container');
 
-  // nextBtn.addEventListener('click',switcher);
-  //
   progressionBar();
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
