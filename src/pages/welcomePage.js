@@ -17,16 +17,8 @@ export const initWelcomePage = () => {
   document
     .getElementById(START_QUIZ_BUTTON_ID)
     .addEventListener('click', startQuiz);
-
-  document
-    .getElementById(CONTINUE_QUIZ)
-    .addEventListener('click', continueQuiz);
 };
 
 const startQuiz = () => {
   initQuestionPage();
-};
-
-const continueQuiz = () => {
-  continueQuizApp();
 };
