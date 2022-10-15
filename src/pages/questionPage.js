@@ -63,6 +63,7 @@ const nextQuestion = () => {
     localStorage.setItem('currentIndex', quizData.currentQuestionIndex);
   } else {
     result();
+    localStorage.removeItem('currentIndex');
   }
 };
 
