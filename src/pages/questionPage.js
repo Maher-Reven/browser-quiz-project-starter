@@ -45,6 +45,7 @@ export const initQuestionPage = () => {
     );
     answersListElement.appendChild(answerElement);
   }
+  showScore(quizData.currentScore);
 
   giveUpElement.addEventListener('click', giveUp);
 
@@ -55,7 +56,6 @@ const nextQuestion = () => {
   quizData.currentQuestionIndex++;
   if (quizData.currentQuestionIndex < quizData.questions.length) {
     initQuestionPage();
-    showScore(quizData.currentScore);
 
     progressionBar();
 
