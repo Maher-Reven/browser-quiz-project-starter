@@ -64,6 +64,7 @@ const nextQuestion = () => {
   } else {
     result();
     localStorage.removeItem('currentIndex');
+    localStorage.removeItem('currentScore');
   }
 };
 

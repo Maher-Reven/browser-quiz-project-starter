@@ -1,6 +1,6 @@
 import { quizData } from '../data.js';
 import { USER_INTERFACE_ID } from '../constants.js';
-import { initQuestionPage } from '../pages/questionPage.js';
+import { initWelcomePage } from '../pages/welcomePage.js';
 
 export const result = () => {
   // RESET THE DOM--------------------------------------
@@ -79,5 +79,7 @@ export const result = () => {
 const restartPage = () => {
   quizData.currentQuestionIndex = 0;
   quizData.currentScore = 0;
-  initQuestionPage();
+  localStorage.removeItem('currentScore');
+
+  initWelcomePage();
 };
