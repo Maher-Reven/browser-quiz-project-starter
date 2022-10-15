@@ -17,6 +17,25 @@ export const quizData = {
 
   questions: [
     {
+      text:
+        'Which of these methods create a new array without mutating the original array where the data is coming from ?',
+      answers: {
+        a: 'every()',
+        b: 'fill()',
+        c: 'filter()',
+        d: 'find()',
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'MDN',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter',
+        },
+      ],
+    },
+    {
       text: 'What are the different ways to declare a JS variable?',
       answers: {
         a: 'constant, let, variable',
@@ -33,25 +52,6 @@ export const quizData = {
         {
           text: 'Tyler McGinnis',
           href: 'https://ui.dev/var-let-const/',
-        },
-      ],
-    },
-    {
-      text:
-        'Which of these methods create a new array without mutated the original array where the data is coming from ?',
-      answers: {
-        a: 'every()',
-        b: 'fill()',
-        c: 'filter()',
-        d: 'find()',
-      },
-      correct: 'c',
-      selected: null,
-      links: [
-        {
-          text: 'MDN',
-          href:
-            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter',
         },
       ],
     },

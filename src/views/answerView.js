@@ -1,6 +1,7 @@
 'use strict';
 
 import { quizData } from '../data.js';
+import { showScore } from '../views/score.js';
 /**
  * Create an Answer element
  * @returns {Element}
@@ -35,8 +36,9 @@ export const createAnswerElement = (
 
     if (currentQuestion.correct === currentQuestion.selected) {
       quizData.currentScore = quizData.currentScore += 1;
-    }
 
+      showScore(quizData.currentScore);
+    }
     if (key === currentQuestion.correct) {
       element.classList.add('right');
     } else {
