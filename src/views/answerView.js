@@ -36,7 +36,7 @@ export const createAnswerElement = (
 
     if (currentQuestion.correct === currentQuestion.selected) {
       quizData.currentScore = quizData.currentScore += 1;
-      console.log(quizData.currentScore);
+
       showScore(quizData.currentScore);
     }
     if (key === currentQuestion.correct) {
